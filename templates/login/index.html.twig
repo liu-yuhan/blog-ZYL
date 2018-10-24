@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+<title> Login </title>
+{% endblock %}
+
+{% block titlehoder %}
+
+{% endblock %}
+
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{asset('css/login.css') }} ">
+{% endblock %}
+
+{% block topnav %}{% endblock %}
+
+{% block main %}
+<div class="signup__container">
+  <div class="container__child signup__thumbnail">
+    <div class="thumbnail__logo">
+
+    </div>
+    <div class="thumbnail__content text-center">
+      <h1 class="heading--primary"> 
+      <span id="wel-l1" > I've waited for you  </span>
+      </br>
+      <span id="wel-l2" > for 10000 years ! <span>
+      </h1>
+    </div>
+    <div class="thumbnail__links">
+     
+    </div>
+    <div class="signup__overlay"></div>
+  </div>
+  <div class="container__child signup__form">
+    <form action="#">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input class="form-control" type="text" name="username" id="username" placeholder="沈巍" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" type="text" name="email" id="email" placeholder="wei.shen@guardian.com" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input class="form-control" type="password" name="password" id="password" placeholder="********" required />
+      </div>
+      <div class="form-group">
+        <label for="passwordRepeat">Repeat Password</label>
+        <input class="form-control" type="password" name="passwordRepeat" id="passwordRepeat" placeholder="********" required />
+      </div>
+      <div class="m-t-lg">
+        <ul class="list-inline">
+          <li>
+            <input class="btn btn--form" type="submit" value="Register" />
+          </li>
+          <li>
+            <a class="signup__link" href="#">I am already a member</a>
+          </li>
+        </ul>
+      </div>
+    </form>  
+  </div>
+</div>
+</div> <!-- /form -->
+{% endblock %}
+
+{% block footer %}{% endblock %}
+{% block JS %}{% endblock %}
