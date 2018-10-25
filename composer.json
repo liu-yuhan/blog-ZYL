@@ -12,7 +12,10 @@
         "symfony/form": "*",
         "symfony/framework-bundle": "*",
         "symfony/orm-pack": "^1.0",
+        "symfony/security-bundle": "*",
+        "symfony/security-csrf": "*",
         "symfony/templating": "*",
+        "symfony/twig-bridge": "*",
         "symfony/twig-bundle": "*",
         "symfony/validator": "*",
         "symfony/yaml": "*"

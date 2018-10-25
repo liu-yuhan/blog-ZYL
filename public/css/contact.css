@@ -1,0 +1,48 @@
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  
+.required{
+width:140px;
+}  
+textarea{
+    background-color: bisque;
+}
+
+input{
+    background-color: bisque;
+}
+
+.form{
+margin-left: 25%;
+}
+
+#form_name{
+    height: 50px;
+    width:500px;
+    margin-top:50px; 
+    margin-bottom: 20px;
+}
+
+#form_email{
+    height:50px;
+    width:500px;
+}
+
+#form_message{
+    height: 150px;
+    width: 500px;
+}
+
+#form_receive_time{
+    height:50px;
+    width:500px;
+}
+.btn 
+{
+    width: 150px;
+    margin-left: 500px;
+}

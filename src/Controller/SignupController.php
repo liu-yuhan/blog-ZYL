@@ -5,16 +5,16 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class LoginController extends AbstractController
+class SignupController extends AbstractController
 {
     /**
-     * @Route("/login", name="login")
+     * @Route("/Signup", name="Signup")
      */
     
     public function index()
     {
-        return $this->render('login/index.html.twig', [
-            'controller_name' => 'LoginController',
+        return $this->render('signup/index.html.twig', [
+            'controller_name' => 'SignupController',
         ]); 
     }
 }
