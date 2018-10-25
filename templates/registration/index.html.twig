@@ -1,17 +1,73 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Signup{% endblock %}
+{% block title %}
+<title> Sign Up </title>
+{% endblock %}
 
-{% block main %}
-{# templates/registration/register.html.twig #}
-
-{{ form_start(registrationForm) }}
-    {{ form_row(registrationForm.username) }}
-    {{ form_row(registrationForm.email) }}
-    {{ form_row(registrationForm.password.first) }}
-    {{ form_row(registrationForm.password.second) }}
-
-    <button type="submit">Register!</button>
-{{ form_end(registrationForm) }}
+{% block titlehoder %}
 
 {% endblock %}
+
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{asset('css/login.css') }} ">
+{% endblock %}
+
+{% block topnav %}{% endblock %}
+
+{% block main %}
+<div class="signup__container">
+  <div class="container__child signup__thumbnail">
+    <div class="thumbnail__logo">
+
+    </div>
+    <div class="thumbnail__content text-center">
+      <h1 class="heading--primary"> 
+      <span id="wel-l1" > I've waited for you  </span>
+      </br>
+      <span id="wel-l2" > for 10000 years ! <span>
+      </h1>
+    </div>
+    <div class="thumbnail__links">
+     
+    </div>
+    <div class="signup__overlay"></div>
+  </div>
+
+ <div class="container__child signup__form">
+            {{ form_start(registrationForm) }}
+              <div class="form-group">
+                 {{ form_row(registrationForm.username) }}
+              </div>
+              <div class="form-group">
+               {{ form_row(registrationForm.email) }}
+              </div>
+              <div class="form-group">
+                 {{ form_row(registrationForm.password.first) }}
+              </div>
+              <div class="form-group">
+                {{ form_row(registrationForm.password.second) }}
+              </div>
+              <div class="m-t-lg">
+                <ul class="list-inline">
+                  <li>
+                    <input class="btn btn--form" type="submit" value="Register" />
+                  </li>
+                  <li>
+                    <a class="signup__link" href="#">I am already a member</a>
+                  </li>
+                 <li>
+                    <input type="checkbox" id="remember_me" name="_remember_me" checked />
+                    <label for="remember_me">Keep me logged in</label>
+                 </li>
+
+                </ul>
+              </div>
+            {{ form_end(registrationForm) }}  
+  </div>
+</div>
+</div> <!-- /form -->
+{% endblock %}
+
+{% block footer %}{% endblock %}
+{% block JS %}{% endblock %}
