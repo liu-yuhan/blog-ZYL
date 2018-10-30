@@ -19,7 +19,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5 {
-  color: #000;
+  color:white ;
   font-family: "Josefin Sans", arial, sans-serif;
 }
 
@@ -130,6 +130,10 @@ header .navbar .dropdown-menu .dropdown-item.active {
 header .navbar .dropdown-menu a {
   padding-top: 7px;
   padding-bottom: 7px;
+}
+
+.promotion_title{
+   margin-top: 300px;
 }
 
 .absolute-toggle {
@@ -259,7 +263,12 @@ header .navbar .dropdown-menu a {
 }
 
 .a-block .text.half-to-full {
-  max-width: 50%;
+  max-width: 100%;
+}
+
+.slider_slogan{
+  margin-top: 260px;
+  margin-left: 10px;
 }
 
 @media (max-width: 767.98px) {
@@ -1678,8 +1687,9 @@ blockquote p {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  padding: 5em 0;
   background: #000;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .site-footer .post-entry-sidebar ul li a h4 {

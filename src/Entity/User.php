@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -39,7 +41,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="json")
      */
-    private $roles = 0;
+    private $roles = [];
 
     /**
      * @var string The hashed password
@@ -47,12 +49,23 @@ class User implements UserInterface
      */
     private $password;
 
-  
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="user_id", orphanRemoval=true)
+     */
+    private $conmment;
+
+    public function __construct()
+    {
+        $this->conmment = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
+
 
     public function setUsername(string $username): self
     {
@@ -106,7 +119,7 @@ class User implements UserInterface
      * @see UserInterface
      */
     public function getPassword(): string
-    {
+    { 
         return (string) $this->password;
     }
 
@@ -133,6 +146,40 @@ class User implements UserInterface
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }
+
+  
+    /**
+     * @return Collection|Comment[]
+     */
+    public function getConmment(): Collection
+    {
+        return $this->conmment;
+    }
+
+    public function addConmment(Comment $conmment): self
+    {
+        if (!$this->conmment->contains($conmment)) {
+            $this->conmment[] = $conmment;
+            $conmment->setUserId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeConmment(Comment $conmment): self
+    {
+        if ($this->conmment->contains($conmment)) {
+            $this->conmment->removeElement($conmment);
+            // set the owning side to null (unless already changed)
+            if ($conmment->getUserId() === $this) {
+                $conmment->setUserId(null);
+            }
+        }
+
+        return $this;
+    }
+
+
 
 
 }

@@ -14,7 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class RegistrationController extends AbstractController
-{
+{ 
 
      /**
      * @Route("/register", name="user_registration")
