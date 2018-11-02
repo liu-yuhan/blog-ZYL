@@ -15,7 +15,6 @@ class ContactType extends AbstractType
             ->add('name')
             ->add('email')
             ->add('message')
-            ->add('receive_time')
         ;
     }
 

@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
 
+
 {% block title %} 
-<title> Blog </title>
+<title> Comment </title>
  {% endblock %}
 
  {% block stylesheet %}
@@ -15,34 +16,22 @@
         <div class="row pt-5">
           <div class="col-12 text-center">
             <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
-            <span class="site-logo"><a href="{{path('index')}}">Blog</h1>
+            <span class="site-logo"><a href="{{path('index')}}">Comments</h1>
           </div>
         </div>
       </div>
 {% endblock %}
 
-
-
-
-
-
-
-{% block main %}
-<div class="blog-container">
- <h1> {{ article.title }}! </h1>
- 
- <h2> {{ article.body }}! </h2>
-</div>
- 
-<div>
-<a href={{path('comment',{'id': article.id})}}> <span class="fa"> Comment </span></a>
-</div>
+        {% block main %}
+        <ul>
+        <div class="blog-container">
+        {% for comment in blogComments %}
+            {{ comment.id }} .  {{comment.author}}
      
+        <li>{{ comment.comment }}</li>
+            {% endfor %}
+        </ul>
+        </div>
+        {% endblock %}
 
-
-
-{% endblock %}
-
-
-
-
+        

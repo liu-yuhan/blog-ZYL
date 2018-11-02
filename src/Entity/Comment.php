@@ -19,41 +19,51 @@ class Comment
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nickname;
+    private $author;
 
     /**
      * @ORM\Column(type="text")
-     */
+     */ 
     private $comment;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="conmment")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="comment")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $user_id;
+    private $user;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\BlogPost", inversedBy="comment")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $article_id;
+    private $article;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNickname(): ?string
+    public function getAuthor(): ?string
     {
-        return $this->nickname;
+        return $this->author;
     }
 
-    public function setNickname(string $nickname): self
+    public function setAuthor(string $author): self
     {
-        $this->nickname = $nickname;
-
+        $this->author = $author;
         return $this;
     }
+
+/*
+Exemple d'utilisation:
+my_comment->setAuthor("jean michel");
+my_comment->setComment("tructruc");
+
+my_comment
+    -> setAuthor("jean michel")
+    -> setComment("tructruc");
+
+*/
 
     public function getComment(): ?string
     {
@@ -67,26 +77,26 @@ class Comment
         return $this;
     }
 
-    public function getUserId(): ?User
+    public function getUser(): ?User
     {
-        return $this->user_id;
+        return $this->user;
     }
 
-    public function setUserId(?User $user_id): self
+    public function setUser(?User $user_id): self
     {
-        $this->user_id = $user_id;
+        $this->user = $user_id;
 
         return $this;
     }
 
-    public function getArticleId(): ?BlogPost
+    public function getArticle(): ?BlogPost
     {
-        return $this->article_id;
+        return $this->article;
     }
 
-    public function setArticleId(?BlogPost $article_id): self
+    public function setArticle(?BlogPost $article_id): self
     {
-        $this->article_id = $article_id;
+        $this->article = $article_id;
 
         return $this;
     }

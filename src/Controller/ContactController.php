@@ -42,20 +42,19 @@ class ContactController extends AbstractController
         public function new(Request $request)
         {
           
-                        $contact = new Contact();
+                  $contact = new Contact();
                     // createFormBuilder is a shortcut to get the "form factory"
                     // and then call "createBuilder()" on it
                         $form = $this -> createFormBuilder($contact)
                         ->add('name')
                         ->add('email')
                         ->add('message')
-                        ->add('receive_time') 
-                    ->getForm();
+                        ->getForm();
 
                     $form->handleRequest($request);
 
                     if ($form->isSubmitted() && $form->isValid()) {
-                        $contact = $form->getData();
+                        $contact = $form->getData();        
 
                         $entityManager = $this->getDoctrine()->getManager();
                         $entityManager -> persist($contact);

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+
 use App\Entity\BlogPost;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -53,7 +54,7 @@ public function entryAction($slug)
 
 
     /**
-     * @Route("/article/{id}", name="show_blogArticle")
+     * @Route("/article={id}", name="show_blogArticle")
      */
          public function show($id)
                 {

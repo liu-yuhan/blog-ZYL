@@ -38,6 +38,16 @@
               <a href={{path('user_registration')}}> <span class="fa"> Sign UP </span></a>
               <a href={{path("app_login")}}> <span class="fa"> Login </span></a>
               <a href={{path("app_logout")}}> <span class="fa"> Logout </span></a>
+               {% if is_granted('ROLE_USER') %}
+                bonjour,      {{ app.user.username }} {{ app.request.method }}
+                                     {% if is_granted('ROLE_ADMIN') %}
+                                     hahaha ROLE_ADMIN
+                                     {% endif %}
+                              
+                    {% else %}
+                       HELLO JOEDOE
+                    {% endif %}
+   
             </div>
             <div class="col-3 search-top">
             
@@ -57,15 +67,47 @@
 
   {% block titlehoder %}{% endblock %}
 
-  {% block menu %}{% endblock %}   
+{% block menu %}
+  <nav class="navbar navbar-expand-md  navbar-light bg-light">
+        <div class="container">
+           <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href={{path("index")}}>Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link active" href={{path("blogArticle")}} >Blog</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="category.html" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown05">
+                  <a class="dropdown-item" href={{path("blogArticle")}}>沈巍</a>
+                  <a class="dropdown-item" href={{path("blogArticle")}}>赵云澜</a>
+                  
+                </div>
+              <li class="nav-item">
+                <a class="nav-link" href="{{path("contact")}}">Contact</a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+    </header>
+{% endblock %} 
       
   <!-- END header -->
 
   {% block banner %} {% endblock %}
 
-  {% block main %} {% endblock %}
+  {% block main %}  {% endblock %}
    
   {% block sidebar %}{% endblock %} 
+
+{% block blogRecommend %} 
+
+{% endblock %}
 
 {% block footer %}
     <footer class="site-footer">
@@ -77,12 +119,7 @@
     <!-- loader -->
    
     {% block JS %}
-    <div id="loader" class="show fullscreen">
-    <svg class="circular" width="48px" height="48px">
-    <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
-    <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/>
-    </svg>
-    </div>
+ 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/jquery-migrate-3.0.0.js"></script>
     <script src="js/popper.min.js"></script>

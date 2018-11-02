@@ -4,6 +4,12 @@
 <title> Blog </title>
  {% endblock %}
 
+ {% block stylesheet %}
+ {{parent()}}
+ <link rel="stylesheet" href="{{asset('css/login.css')}}">
+ 
+ {% endblock %}
+
 {% block titlehoder %}
  <div class="container logo-wrap">
         <div class="row pt-5">
@@ -17,64 +23,213 @@
 
 
 
-
-{% block menu %}
-  <nav class="navbar navbar-expand-md  navbar-light bg-light">
-        <div class="container">
-           <div class="collapse navbar-collapse" id="navbarMenu">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="index.html">Home</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="category.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Travel</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown04">
-                  <a class="dropdown-item" href="category.html">Asia</a>
-                  <a class="dropdown-item" href="category.html">Europe</a>
-                  <a class="dropdown-item" href="category.html">Dubai</a>
-                  <a class="dropdown-item" href="category.html">Africa</a>
-                  <a class="dropdown-item" href="category.html">South America</a>
-                </div>
-
-              </li>
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="category.html" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown05">
-                  <a class="dropdown-item" href="category.html">Lifestyle</a>
-                  <a class="dropdown-item" href="category.html">Food</a>
-                  <a class="dropdown-item" href="category.html">Adventure</a>
-                  <a class="dropdown-item" href="category.html">Travel</a>
-                  <a class="dropdown-item" href="category.html">Business</a>
-                </div>
-
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-            
+{% block Recommend %}
+    <section class="site-section py-sm">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="mb-4">Lifestyle Category</h2>
           </div>
         </div>
-      </nav>
-    </header>
-{% endblock %}
+        <div class="row blog-entries">
+          <div class="col-md-12 col-lg-8 main-content">
+            <div class="row">
+              <div class="col-md-6">
+                <a href="blog-single.html" class="blog-entry element-animate" data-animate-effect="fadeIn">
+                  <img src="images/img_5.jpg">
+                  <div class="blog-content-body">
+                    <div class="post-meta">
+                      <span class="category">Food</span>
+                      <span class="mr-2">March 15, 2018 </span> &bullet;
+                      <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                    </div>
+                    <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="blog-single.html" class="blog-entry element-animate" data-animate-effect="fadeIn">
+                  <img src="images/img_6.jpg" alt="Image placeholder">
+                  <div class="blog-content-body">
+                    <div class="post-meta">
+                      <span class="category">Travel</span>
+                        <span class="mr-2">March 15, 2018 </span> &bullet;
+                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                      </div>
+                    <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-6">
+                <a href="blog-single.html" class="blog-entry element-animate" data-animate-effect="fadeIn">
+                  <img src="images/img_7.jpg" alt="Image placeholder">
+                  <div class="blog-content-body">
+                    <div class="post-meta">
+                      <span class="category">Travel, Asia</span>
+                      <span class="mr-2">March 15, 2018 </span> &bullet;
+                      <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                    </div>
+                    <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="blog-single.html" class="blog-entry element-animate" data-animate-effect="fadeIn">
+                  <img src="images/img_8.jpg" alt="Image placeholder">
+                  <div class="blog-content-body">
+                    <div class="post-meta">
+                      <span class="category">Travel</span>
+                      <span class="mr-2">March 15, 2018 </span> &bullet;
+                      <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                    </div>
+                    <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-6">
+                <a href="blog-single.html" class="blog-entry element-animate" data-animate-effect="fadeIn">
+                  <img src="images/slider1.jpg" alt="Image placeholder">
+                  <div class="blog-content-body">
+                    <div class="post-meta">
+                      <span class="category">Travel</span>
+                      <span class="mr-2">March 15, 2018 </span> &bullet;
+                      <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                    </div>
+                    <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="blog-single.html" class="blog-entry element-animate" data-animate-effect="fadeIn">
+                  <img src="images/slider2.jpg" alt="Image placeholder">
+                  <div class="blog-content-body">
+                    <div class="post-meta">
+                      <span class="category">Lifestyle</span>
+                      <span class="mr-2">March 15, 2018 </span> &bullet;
+                      <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                    </div>
+                    <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-6">
+                <a href="blog-single.html" class="blog-entry element-animate" data-animate-effect="fadeIn">
+                  <img src="images/slider3.jpg" alt="Image placeholder">
+                  <div class="blog-content-body">
+                    <div class="post-meta">
+                      <span class="category">Lifestyle</span>
+                      <span class="mr-2">March 15, 2018 </span> &bullet;
+                      <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                    </div>
+                    <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="blog-single.html" class="blog-entry element-animate" data-animate-effect="fadeIn">
+                  <img src="images/img_12.jpg" alt="Image placeholder">
+                  <div class="blog-content-body">
+                    <div class="post-meta">
+                      <span class="category">Food</span>
+                      <span class="mr-2">March 15, 2018 </span> &bullet;
+                      <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                    </div>
+                    <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <nav aria-label="Page navigation" class="text-center">
+                  <ul class="pagination">
+                    <li class="page-item  active"><a class="page-link" href="#">Prev</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+
+         
+            <div class="row mb-5 mt-5">
+
+              <div class="col-md-12">
+                <h2 class="mb-4">More Blog Posts</h2>
+              </div>
+        
+              <div class="col-md-12">
+
+                <div class="post-entry-horzontal">
+                  <a href="blog-single.html">
+                    <div class="image element-animate"  data-animate-effect="fadeIn" style="background-image: url(images/img_10.jpg);"></div>
+                    <span class="text">
+                      <div class="post-meta">
+                        <span class="category">Travel</span>
+                        <span class="mr-2">March 15, 2018 </span> &bullet;
+                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                      </div>
+                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                    </span>
+                  </a>
+                </div>
+                <!-- END post -->
+
+                <div class="post-entry-horzontal">
+                  <a href="blog-single.html">
+                    <div class="image element-animate"  data-animate-effect="fadeIn" style="background-image: url(images/img_11.jpg);"></div>
+                    <span class="text">
+                      <div class="post-meta">
+                        <span class="category">Lifestyle</span>
+                        <span class="mr-2">March 15, 2018 </span> &bullet;
+                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                      </div>
+                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                    </span>
+                  </a>
+                </div>
+                <!-- END post -->
+
+                <div class="post-entry-horzontal">
+                  <a href="blog-single.html">
+                    <div class="image element-animate"  data-animate-effect="fadeIn" style="background-image: url(images/img_12.jpg);"></div>
+                    <span class="text">
+                      <div class="post-meta">
+                        <span class="category">Food</span>
+                        <span class="mr-2">March 15, 2018 </span> &bullet;
+                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                      </div>
+                      <h2>There’s a Cool New Way for Men to Wear Socks and Sandals</h2>
+                    </span>
+                  </a>
+                </div>
+                <!-- END post -->
+
+              </div>
+            </div>
+          </div>
+    </section>
+          <!-- END main-content -->
+    {% endblock %}
+
+
 
 {% block main %}
-<div>
+<div class="blog-container">
 <ul>
 {% for article in all_articles %}
    <a href="{{ path('show_blogArticle', {'id': article.id}) }}">
-    {{ article.title }}
+     {{article.id }}.  {{ article.title }}
 </a>
-
-        <li>{{ article.body|e }}</li>
+   <li>{{ article.body|e }}</li>
     {% endfor %}
 </ul>
 </div>
 {% endblock %}
 
-{% block JS %}{% endblock %}

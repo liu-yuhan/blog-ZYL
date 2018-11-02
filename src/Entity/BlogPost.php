@@ -44,7 +44,7 @@ class BlogPost
     private $category;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="article_id", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="article", orphanRemoval=true)
      */
     private $comment;
 
@@ -130,7 +130,7 @@ class BlogPost
     {
         if (!$this->comment->contains($comment)) {
             $this->comment[] = $comment;
-            $comment->setArticleId($this);
+            $comment->setArticle($this);
         }
 
         return $this;
@@ -141,8 +141,8 @@ class BlogPost
         if ($this->comment->contains($comment)) {
             $this->comment->removeElement($comment);
             // set the owning side to null (unless already changed)
-            if ($comment->getArticleId() === $this) {
-                $comment->setArticleId(null);
+            if ($comment->getArticle() === $this) {
+                $comment->setArticle(null);
             }
         }
 

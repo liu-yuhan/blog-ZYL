@@ -51,13 +51,13 @@ class User implements UserInterface
 
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="user_id", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="user", orphanRemoval=true)
      */
-    private $conmment;
+    private $comment;
 
     public function __construct()
     {
-        $this->conmment = new ArrayCollection();
+        $this->comment = new ArrayCollection();
     }
 
 
@@ -65,6 +65,8 @@ class User implements UserInterface
     {
         return $this->id;
     }
+
+
 
 
     public function setUsername(string $username): self
@@ -93,7 +95,7 @@ class User implements UserInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->email;
+        return (string) $this->username;
     }
 
     /**
@@ -151,28 +153,28 @@ class User implements UserInterface
     /**
      * @return Collection|Comment[]
      */
-    public function getConmment(): Collection
+    public function getComment(): Collection
     {
-        return $this->conmment;
+        return $this->comment;
     }
 
-    public function addConmment(Comment $conmment): self
+    public function addComment(Comment $comment): self
     {
-        if (!$this->conmment->contains($conmment)) {
-            $this->conmment[] = $conmment;
-            $conmment->setUserId($this);
+        if (!$this->comment->contains($comment)) {
+            $this->comment[] = $comment;
+            $comment->setUser($this);
         }
 
         return $this;
     }
 
-    public function removeConmment(Comment $conmment): self
+    public function removeComment(Comment $comment): self
     {
-        if ($this->conmment->contains($conmment)) {
-            $this->conmment->removeElement($conmment);
+        if ($this->comment->contains($comment)) {
+            $this->comment->removeElement($comment);
             // set the owning side to null (unless already changed)
-            if ($conmment->getUserId() === $this) {
-                $conmment->setUserId(null);
+            if ($comment->getUser() === $this) {
+                $comment->setUser(null);
             }
         }
 

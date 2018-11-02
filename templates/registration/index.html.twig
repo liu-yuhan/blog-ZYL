@@ -5,19 +5,22 @@
 {% endblock %}
 
 {% block titlehoder %}
-
+<div class="center">
+<p id="register"> what's your special power? </p>
+</div>
 {% endblock %}
 
 
 {% block stylesheet %}
-<link rel="stylesheet" href="{{asset('css/login.css') }} ">
+{{parent()}}
+<link rel="stylesheet" href="{{asset('css/register.css') }} ">
 {% endblock %}
 
-{% block topnav %}{% endblock %}
+
 
 {% block main %}
 <div class="signup__container">
-  <div class="container__child signup__thumbnail">
+  <div class="container__child signup__thumbnail" style="background-image: url('images/zh.jpg'); " >
     <div class="thumbnail__logo">
 
     </div>
@@ -50,17 +53,16 @@
               </div>
               <div class="m-t-lg">
                 <ul class="list-inline">
+                <div id="register">
                   <li>
                     <input class="btn btn--form" type="submit" value="Register" />
                   </li>
+                </div>
+                  <div>
                   <li>
-                    <a class="signup__link" href="#">I am already a member</a>
+                    <a class="signup__link" href={{path("app_login")}}>I am already a member</a>
                   </li>
-                 <li>
-                    <input type="checkbox" id="remember_me" name="_remember_me" checked />
-                    <label for="remember_me">Keep me logged in</label>
-                 </li>
-
+                  </div>             
                 </ul>
               </div>
             {{ form_end(registrationForm) }}  
@@ -70,4 +72,13 @@
 {% endblock %}
 
 {% block footer %}{% endblock %}
-{% block JS %}{% endblock %}
+{% block JS %}
+ <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/main.js"></script>
+{% endblock %}

@@ -31,11 +31,6 @@ class Contact
      */
     private $message;
 
-    /**
-     * @ORM\Column(type="text"  )
-     */
-    private $receive_time;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -77,15 +72,5 @@ class Contact
         return $this;
     }
 
-    public function getReceiveTime(): ?string
-    {
-        return $this->receive_time;
-    }
 
-    public function setReceiveTime(string $receive_time): self
-    {
-        $this->receive_time = $receive_time;
-
-        return $this;
-    }
 }
