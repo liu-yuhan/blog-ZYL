@@ -59,7 +59,7 @@ class ContactController extends AbstractController
                         $entityManager = $this->getDoctrine()->getManager();
                         $entityManager -> persist($contact);
                         $entityManager->flush();
-                    return $this->redirectToRoute('contact');
+                    return $this->redirectToRoute('index');
                     }
 
             return $this->render('contact/index.html.twig', array(

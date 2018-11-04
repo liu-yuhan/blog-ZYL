@@ -1,6 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}  userSpace{% endblock %}
+{% block title %}
+<title>  userSpace </title>
+{% endblock %}
+
+
+{% block titlehoder %}
+ <div class="container logo-wrap">
+        <div class="row pt-5">
+          <div class="col-12 text-center">
+            <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
+            <span class="site-logo"><a href="#"}>UserSpace</h1>
+          </div>
+        </div>
+      </div>
+{% endblock %}
 
 {% block main %}
 <style>
@@ -18,3 +32,9 @@
       </br>
 {% endfor %}
 {% endblock %}
+
+
+
+
+
+{% block footer %}{% endblock %}
