@@ -39,11 +39,11 @@
               <a href={{path("app_login")}}> <span class="fa"> Login </span></a>
               <a href={{path("app_logout")}}> <span class="fa"> Logout </span></a>
                {% if is_granted('ROLE_USER') %}
-                bonjour,      {{ app.user.username }} {{ app.request.method }}
+              <a href={{path("user_space",{user:app.user.id } )}}>   bonjour,      {{ app.user.username }} </a>
                                      {% if is_granted('ROLE_ADMIN') %}
                                      hahaha ROLE_ADMIN
                                      {% endif %}
-                              
+                               
                     {% else %}
                        HELLO JOEDOE
                     {% endif %}
